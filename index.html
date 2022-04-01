@@ -10,6 +10,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Form Validator with RegEx</title>
+    <style>
+        * {
+            /* border: 2px solid red; */
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +22,7 @@
     <!-- NavBar starts from here -->
     <nav class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./">Navbar</a>
+            <a class="navbar-brand" href="./">Travel GO</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,19 +32,22 @@
                         <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Link</a>
+                        <a class="nav-link" href="">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Contact US</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
+                            Options
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="">Action</a></li>
-                            <li><a class="dropdown-item" href="">Another action</a></li>
+                            <li><a class="dropdown-item" href="">Sign In</a></li>
+                            <li><a class="dropdown-item" href="">Sign UP</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="">Something else here</a></li>
+                            <li><a class="dropdown-item" href="">View Cars</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -50,6 +58,58 @@
             </div>
         </div>
     </nav>
+
+    <!-- Section starts from here -->
+    <section>
+        <div class="container my-5">
+            <div class="container mx-5">
+                <h1>Travel Agency</h1>
+                <hr>
+                <form class="flex">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter your Name...">
+                        <small id="userNameValid" class="form-text text-muted invalid-feedback">
+                            Your Username must be 2-10 characters long and should not start with a number or other characters.
+                        </small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Mobile Number</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Enter your Number...">
+                        <small id="phoneValid" class="form-text text-muted invalid-feedback">
+                            Your phone number for india must be 10 digit long without country code.
+                        </small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="text" class="form-control" id="email" placeholder="Enter your Email...">
+                        <small id="emailValid" class="form-text text-muted invalid-feedback">
+                            Your email must be a valid email. name@XXXXX.XXX
+                        </small>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="cars">Select Car</label>
+                        <select class="form-control" id="cars">
+                            <option>Safari</option>
+                            <option>Maruti 800</option>
+                            <option selected>Ford Titanium</option>
+                            <option>Audi A4</option>
+                            <option >Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="Enter your address...">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Any Other message</label>
+                        <textarea class="form-control" id="message" rows="3" placeholder="Message here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-dark">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <!--  Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
