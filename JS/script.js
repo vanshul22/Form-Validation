@@ -2,7 +2,7 @@
 Website Name - Form Validation
 Name : Vanshul Kesharwani
 Date : 01/04/2022
-Version : 5.1.1
+Version : 5.1.2
 Email : vkvanshulkesharwani54@gmail.com
 Description : This is a Web app for validating a form with Regular Expression of JavaScript.
 */
@@ -28,6 +28,7 @@ email.addEventListener("blur", blurEmail);
 address.addEventListener("blur", blurAddress);
 message.addEventListener("blur", blurMessage);
 
+
 // Added function to validate from Reg Ex, from blur event.
 function blurUserName() {
     // Here we are taking starting char of [a-zA-Z] it means start from a to z and A to Z space are allowed and 3 to 15 chars allow.
@@ -42,7 +43,6 @@ function blurUserName() {
     };
 };
 
-
 // Added function to validate from Reg Ex, from blur event.
 function blurPhone() {
     // Here we are taking starting char of [^([0-9]){10}$] it means only 10 numbers allowed.
@@ -56,7 +56,6 @@ function blurPhone() {
         phoneValid = false;
     };
 };
-
 
 // Added function to validate from Reg Ex, from blur event.
 function blurEmail() {
@@ -77,7 +76,6 @@ function blurAddress() {
     // Here we are taking starting char of [#a-zA-Z0-9] and after that anything comes from this [\/\-,( )._#a-zA-Z0-9] and most important it should be between 5 to 50 chars.
     let re = /^(([#a-zA-Z0-9])[\/\-,( )._#a-zA-Z0-9]{4,49})$/;
     let str = address.value;
-
     if (re.test(str)) {
         address.classList.remove('is-invalid');
         addressValid = true;
@@ -101,14 +99,15 @@ function blurMessage() {
     };
 };
 
+
 // Taking notification IDs here.
 let success = document.getElementById("success");
 let failure = document.getElementById("failure");
 
-
 // validating all form data from submit ID.
 let submit = document.getElementById("submit");
 submit.addEventListener("click", submitData);
+
 
 // Adding Submit function
 function submitData(e) {
@@ -119,7 +118,7 @@ function submitData(e) {
         setTimeout(() => {
             success.classList.add('d-none');
         }, 8000);
-
+        document.getElementById("FormValidation").reset();
     } else {
         failure.classList.remove('d-none');
         setTimeout(() => {
